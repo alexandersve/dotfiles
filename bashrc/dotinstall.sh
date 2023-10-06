@@ -13,7 +13,12 @@ display_help() {
 
 # Function to install bashrc files
 bashrc_install() {
-    cat ${SCRIPT}bashrc_additions >> ~/.bashrc
+    echo "##### Added from alexandersve/dotfiles #########################################################################
+for file in ~/.dotfiles/bashrc/bashrc*; do
+    [ -r \"\${file}\" ] && [ -f \"\${file}\" ] && source \"\${file}\";
+done;
+unset file;
+">> ~/.bashrc
 }
 
 # Check if no options were provided, default action is to run bashrc_install

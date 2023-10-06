@@ -14,7 +14,11 @@ display_help() {
 # Function to install ssh files
 ssh_install() {
     mkdir -p ~/.ssh
-    cp ${SCRIPT}config ~/.ssh/
+    if [ -f ]; then
+        cat ${SCRIPT}config >> ~/.ssh/config
+    else
+        cp ${SCRIPT}config ~/.ssh/
+    fi
 }
 
 # Check if no options were provided, default action is to run ssh_install

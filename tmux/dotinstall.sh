@@ -14,7 +14,7 @@ display_help() {
 # Function to install tmux files
 tmux_install() {
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    cp ${SCRIPT}.tmux.conf ~/
+    ln -s .dotfiles/tmux/.tmux.conf .tmux.conf
 }
 
 # Check if no options were provided, default action is to run tmux_install

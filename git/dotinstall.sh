@@ -13,7 +13,7 @@ display_help() {
 
 # Function to install git files
 git_install() {
-    cp ${SCRIPT}.gitconfig ~/
+    git config --global core.autocrlf input
 }
 
 # Check if no options were provided, default action is to run git_install

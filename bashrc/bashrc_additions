@@ -6,6 +6,8 @@
 # Not getting windows line ending faults
 # git config --global core.autocrlf input
 
+# Maybe to get rust to work
+#. "$HOME/.cargo/env"
 
 
 #### Command prompt 
