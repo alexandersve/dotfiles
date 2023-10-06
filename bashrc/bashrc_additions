@@ -1,0 +1,42 @@
+##### Added from alexandersve/dotfiles #####################################################################
+
+
+#### Settings
+
+# Not getting windows line ending faults
+# git config --global core.autocrlf input
+
+
+
+#### Command prompt 
+
+# Add git branch to terminal-line
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# Add line with red warning text
+print_warning() {
+  printf "\e[41m\e[97m"
+  cols=$(tput cols)
+  msg="          WARNING PRODUCTION!"
+  # Calculate the number of spaces needed to fill the rest of the line
+  spaces=$((cols - ${#msg}))
+  echo -n "$msg"
+  printf "%${spaces}s\e[0m"
+}
+
+print_warning() {
+  printf "\e[41m\e[97m"
+  cols=$(tput cols)
+  msg="          WARNING!"
+  # Calculate the number of spaces needed to fill the rest of the line
+  spaces=$((cols - ${#msg}))
+  echo -n "$msg"
+  printf "%${spaces}s"
+}
+# Add to PS1 to get to work \[$(print_warning)\]\e[0m
+
+# Setting command prompt
+export PS1="\[\033[0;32m\]\u: \[\033[0;36m\]\w\[\033[0;33m\]\$(parse_git_branch) \[\033[0m\]$ "

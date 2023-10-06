@@ -1,0 +1,5 @@
+Host x.x.x.x
+     HostName x.x.x.x
+     User name
+     Port 9999
+     IdentityFile /home/alexanders/.ssh/gitea
