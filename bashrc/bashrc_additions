@@ -42,3 +42,7 @@ print_warning() {
 
 # Setting command prompt
 export PS1="\[\033[0;32m\]\u: \[\033[0;36m\]\w\[\033[0;33m\]\$(parse_git_branch) \[\033[0m\]$ "
+
+
+#### Good commands
+#sudo update-motd # Get Ubuntu startup screen
