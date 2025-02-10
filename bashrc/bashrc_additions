@@ -9,6 +9,8 @@
 # Maybe to get rust to work
 #. "$HOME/.cargo/env"
 
+# Make history append instead of overwrite
+shopt -s histappend
 
 #### Command prompt 
 
@@ -19,16 +21,6 @@ parse_git_branch() {
 }
 
 # Add line with red warning text
-print_warning() {
-  printf "\e[41m\e[97m"
-  cols=$(tput cols)
-  msg="          WARNING PRODUCTION!"
-  # Calculate the number of spaces needed to fill the rest of the line
-  spaces=$((cols - ${#msg}))
-  echo -n "$msg"
-  printf "%${spaces}s\e[0m"
-}
-
 print_warning() {
   printf "\e[41m\e[97m"
   cols=$(tput cols)
