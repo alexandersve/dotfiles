@@ -14,6 +14,7 @@ display_help() {
 # Function to install git files
 git_install() {
     git config --global core.autocrlf input
+    git config --global init.defaultBranch main
 }
 
 # Check if no options were provided, default action is to run git_install
